@@ -50,7 +50,7 @@ solution: check-lab ## Apply the lab's optional Terraform solution
 solution-end: check-lab ## Destroy the Terraform solution
 	bash scripts/tf.sh $(LABDIR) solution destroy
 
-test: check-lab ## Run a lab end-to-end
+test: check-lab ## Run a lab end-to-end, what CI runs
 	$(MAKE) reset
 	$(MAKE) start
 	uv run jupyter nbconvert --to notebook --execute $(LABDIR)/lab.ipynb --output-dir build/$(LAB)
