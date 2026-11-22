@@ -1,0 +1,8 @@
+services:
+  floci:
+    image: floci/floci:${FLOCI_VERSION:?set in versions.env, or start Floci with make up}
+    ports:
+      - "4566:4566"
+    volumes:
+      # Lets Floci start real containers (Lambda, EC2) and its web console.
+      - /var/run/docker.sock:/var/run/docker.sock

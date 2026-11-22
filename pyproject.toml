@@ -1,0 +1,14 @@
+[project]
+name = "AWS-Labs-as-Code"
+description = "AWS Builder Labs rebuilt with boto3 and Terraform"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3>=1.34",
+    "jupyterlab>=4.6.6",
+    "python-dotenv>=1.2.4",
+]
+authors = [
+    {name = "Souhail Ben Belhassen"},
+]
+license = "MIT"
