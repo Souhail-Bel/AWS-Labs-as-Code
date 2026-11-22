@@ -8,8 +8,8 @@ jobs:
   fmt:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
+      - uses: actions/checkout@v5
+      - uses: hashicorp/setup-terraform@v4
       - run: terraform fmt -check -recursive
 
   discover:
@@ -17,24 +17,25 @@ jobs:
     outputs:
       labs: ${{ steps.labs.outputs.labs }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       # Every folder named NN-service under labs/ is a lab, with _template skipped.
       - id: labs
         run: echo "labs=$(ls -d labs/[0-9]* | xargs -n1 basename | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
 
   lab:
     needs: discover
+    if: needs.discover.outputs.labs != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         lab: ${{ fromJson(needs.discover.outputs.labs) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
         with:
           python-version: "3.12"
-          cache: pip
-      - uses: hashicorp/setup-terraform@v3
+          enable-cache: true
+      - uses: hashicorp/setup-terraform@v4
       - run: uv sync --locked
       - run: uv run make test LAB=${{ matrix.lab }}
