@@ -13,6 +13,7 @@
 - `seed/` is what Skill Builder would have set up. It never contains what the learner builds.
 - Terraform declares infrastructure. Data belongs to the notebook.
 - Look seeded resources up by tag, _not_ by ID.
+- Use `client` by default. Use `resource` only for DynamoDB items, where it handles type conversion. See the [boto3 resources guide](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/resources.html).
 - Comments explain why, not what.
 - Try and describe labs in your own words/diagrams.
 - Run `make fmt` before committing.

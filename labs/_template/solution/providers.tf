@@ -27,7 +27,6 @@ provider "aws" {
   skip_requesting_account_id  = var.use_floci
 
   # endpoint per serice the lab uses
-  # Every service the lab uses needs its own endpoint.
   endpoints {
     # s3 = local.endpoint
   }

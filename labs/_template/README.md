@@ -1,6 +1,6 @@
 # Lab NN: <Service>
 
-Part of the free [Introduction to AWS Cloud](https://aws.amazon.com/blogs/training-and-certification/begin-your-aws-journey-with-new-free-aws-builder-labs-learning-plan-on-aws-skill-builder) learning plan (lab SPL-NN).
+Part of the free [Introduction to AWS Cloud](https://skillbuilder.aws/learning-plan/JE1AJBF5ZP/builder-labs-introduction-to-aws-cloud/955TYR1UFV) learning plan (lab SPL-NN).
 
 One sentence on what you build.
 
