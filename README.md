@@ -68,7 +68,7 @@ versions.env     the Floci version this repo targets
 | 01 | Amazon VPC | planned |
 | 02 | Amazon EC2 | planned |
 | 03 | AWS Lambda | planned |
-| 04 | Amazon DynamoDB | planned |
+| 04 | Amazon DynamoDB | [done](labs/04-dynamodb/README.md) |
 | 05 | Amazon API Gateway | planned |
 | 06 | Amazon S3 | planned |
 | 07 | AWS IAM | planned |
