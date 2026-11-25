@@ -3,10 +3,9 @@ services:
     image: floci/floci:${FLOCI_VERSION:?set in versions.env, or start Floci with make up}
     ports:
       - "4566:4566"
-    environment:
-      # Off unless floci.env (per lab) turns them on
-      FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED: ${FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED:-false}
-      FLOCI_SERVICES_S3_ENFORCE_AUTH: ${FLOCI_SERVICES_S3_ENFORCE_AUTH:-false}
+    env_file:
+      - path: labs/${LAB:-_none}/floci.env
+        required: false
     volumes:
       # Lets Floci start real containers (Lambda, EC2) and its web console.
       - /var/run/docker.sock:/var/run/docker.sock
