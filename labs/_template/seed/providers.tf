@@ -26,7 +26,7 @@ provider "aws" {
   skip_metadata_api_check     = var.use_floci
   skip_requesting_account_id  = var.use_floci
 
-  # endpoint per serice the lab uses
+  # endpoint per service the lab uses
   endpoints {
     # s3 = local.endpoint
   }
