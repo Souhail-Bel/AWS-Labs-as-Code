@@ -70,7 +70,7 @@ versions.env     the Floci version this repo targets
 | 03 | AWS Lambda | planned |
 | 04 | Amazon DynamoDB | [done](labs/04-dynamodb/README.md) |
 | 05 | Amazon API Gateway | planned |
-| 06 | Amazon S3 | planned |
+| 06 | Amazon S3 | [done](labs/06-s3/README.md) |
 | 07 | AWS IAM | planned |
 | 08 | Basic audit of an AWS environment | planned |
 | 09 | AWS KMS | planned |
@@ -84,6 +84,10 @@ Pick how Floci runs with `FLOCI_RUNTIME`:
 make up                      # Docker (default)
 make up FLOCI_RUNTIME=cli    # the floci CLI
 ```
+
+> [!IMPORTANT]
+> Be mindful of `floci.env` per lab.
+> There are environment variables like `FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED` and `FLOCI_SERVICES_S3_ENFORCE_AUTH` that need to be set for priviliged access
 
 The version this repo targets is set in [`versions.env`](versions.env). Docker runs that image tag.
 
